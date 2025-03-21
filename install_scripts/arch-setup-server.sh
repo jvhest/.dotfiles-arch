@@ -431,9 +431,9 @@ echo -ne "
 -------------------------------------------------------------------------
 "
 if [[ ! -d "/sys/firmware/efi" ]]; then
-    pacstrap /mnt base base-devel linux-lts linux-firmware --noconfirm --needed
+    pacstrap /mnt base base-devel linux-lts linux-firmware terminus-font vim --noconfirm --needed
 else
-    pacstrap /mnt base base-devel linux-lts linux-firmware efibootmgr --noconfirm --needed
+    pacstrap /mnt base base-devel linux-lts linux-firmware efibootmgr terminus-font vim --noconfirm --needed
 fi
 echo "keyserver hkp://keyserver.ubuntu.com" >> /mnt/etc/pacman.d/gnupg/gpg.conf
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
@@ -593,7 +593,7 @@ echo -ne "
 -------------------------------------------------------------------------
 "
 # admin tools
-pacman -S --noconfirm --needed terminus-font gptfdisk
+pacman -S --noconfirm --needed gptfdisk
 # archiving and compression
 pacman -S --noconfirm --needed tar unrar zip unzip 7zip
 # bluetooth

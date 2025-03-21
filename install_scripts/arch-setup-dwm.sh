@@ -45,6 +45,8 @@ if [ ! -d ~/.dotfiles ]; then
 else
     echo "Repository already exists, skipping clone"
 fi
+mv bash_profile bash_profile.bak
+mv .bashrc .bashrc.bak
 
 cd ~/.dotfiles || { echo "Failed to change directory to .dotfiles"; return 1; }
 
@@ -145,7 +147,6 @@ install_picom() {
     sudo pacman -S --needed --noconfirm libxcb meson libev uthash libconfig
 
     # Clone the repository in the home/build directory
-    mkdir -p ~/.local/src
     if [ ! -d ~/.local/src/picom ]; then
         if ! git clone https://github.com/FT-Labs/picom.git ~/.local/src/picom; then
             echo "Failed to clone the repository"
