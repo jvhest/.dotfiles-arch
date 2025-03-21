@@ -1,0 +1,60 @@
+#!/bin/bash
+#
+# Script name: dm-logout
+# Description: shutdown, reboot or suspend.
+# Dependencies: dmenu, systemd, notify-send
+
+# Set with the flags "-e", "-u","-o pipefail" cause the script to fail
+# if certain things happen, which is a good thing.  Otherwise, we can
+# get hidden bugs that are hard to discover.
+# set -euo pipefail
+
+input() {
+    echo $(printf $1 | rofi -sep '|' -dmenu -p "$2: ")
+}
+
+main() {
+  options="Logout|Reboot|Shutdown|Suspend|Exit"
+  choice=$(input $options "Power menu")
+
+  case $choice in
+  'Logout')
+    if [[ $(input "No|Yes" $choice) == "Yes" ]]; then
+        pkill x
+    else
+        notify-send "dm-logout" "Logout canceled."
+        exit 0
+    fi
+  ;;
+  'Reboot')
+    if [[ $(input "No|Yes" $choice) == "Yes" ]]; then
+        systemctl reboot
+    else
+        notify-send "dm-logout" "Reboot canceled."
+        exit 0
+    fi
+  ;;
+  'Shutdown')
+    if [[ $(input "No|Yes" $choice) == "Yes" ]]; then
+      systemctl poweroff
+    else
+      notify-send "dm-logout" "Shutdown canceled."
+      exit 0
+    fi
+  ;;
+  'Suspend')
+    if [[ $(input "No|Yes" $choice) == "Yes" ]]; then
+      systemctl suspend
+    else
+      notify-send "dm-logout" "Suspend canceled."
+      exit 0
+    fi
+  ;;
+  *) exit 0 ;;
+  esac
+}
+
+main
+
+# If script is run with NO argument, it will use 'dmenu'
+# [[ "${BASH_SOURCE[0]}" == "${0}" ]] && main "$@"
