@@ -8,7 +8,12 @@ slstatus &
 xrdb -load ~/.config/Xresources
 
 # setup monitors the way I like them.
-xrandr --output HDMI-1 --mode 1920x1080 --right-of HDMI-2 --output HDMI-2 --primary --mode 1920x1080 &
+virt=$(xrandr | grep ^Virtual | wc -l)
+if [ $virt -eq 1 ]; then
+	xrandr --output Virtual-1 --mode 1920x1080 &
+else
+	xrandr --output HDMI-1 --mode 1920x1080 --right-of HDMI-2 --output HDMI-2 --primary --mode 1920x1080 &
+fi
 
 # setup redshift
 #redshift &
