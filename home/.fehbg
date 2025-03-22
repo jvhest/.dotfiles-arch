@@ -1,10 +1,10 @@
 #!/bin/sh
 feh --no-fehbg --bg-fill \
-    '/home/jvh/Pictures/backgrounds/japan-0019.png' \
-    '/home/jvh/Pictures/backgrounds/landscape-0066.png' \
+    '/home/jvh/Pictures/backgrounds/japan-0019.jpg' \
+    '/home/jvh/Pictures/backgrounds/landscape-0066.jpg' \
     '/home/jvh/Pictures/backgrounds/10.png' \
     '/home/jvh/Pictures/backgrounds/earth-in-space.png' \
-    '/home/jvh/Pictures/backgrounds/landscape-0045.png' \
-    '/home/jvh/Pictures/backgrounds/nature-0050.png' \
-    '/home/jvh/Pictures/backgrounds/landscape-0061.png' \
-    '/home/jvh/Pictures/backgrounds/landscape-0056.png' \
+    '/home/jvh/Pictures/backgrounds/landscape-0045.jpg' \
+    '/home/jvh/Pictures/backgrounds/nature-0050.jpg' \
+    '/home/jvh/Pictures/backgrounds/landscape-0061.jpg' \
+    '/home/jvh/Pictures/backgrounds/landscape-0056.jpg' \
