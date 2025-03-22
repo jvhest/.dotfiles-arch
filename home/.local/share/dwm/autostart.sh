@@ -24,7 +24,7 @@ redshift -l 51.32:4.94 -t 6500:5000 -g 0.8 -m randr &
 
 # compositor
 # picom --animations -b &
-picom --animations -b &
+picom -b &
 
 # sxhkd
 # (re)load sxhkd for keybinds

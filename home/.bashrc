@@ -58,7 +58,9 @@ bind '"\C-l":clear-screen'
 set -o vi
 
 # commandline / prompt
-eval "$(starship init bash)"
+if command -v starship &> /dev/null; then
+    eval "$(starship init bash)"
+fi
 
 # eval "$(aactivator init)"
 

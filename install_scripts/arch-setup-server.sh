@@ -316,7 +316,8 @@ echo -ne "
                     Setting up $iso mirrors for faster downloads
 -------------------------------------------------------------------------
 "
-reflector -a 48 -c "$iso" -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
+# reflector -a 48 -c "$iso" -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
+reflector -a 48 -c NL -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
 if [ ! -d "/mnt" ]; then
     mkdir /mnt
 fi
