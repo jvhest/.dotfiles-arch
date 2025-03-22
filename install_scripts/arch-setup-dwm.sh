@@ -31,23 +31,14 @@ mkdir -p .local/src
 
 xdg-user-dirs-update
 
-# -----------------------------------------------
-# clone .dotfiles
-# -----------------------------------------------
-
 cd ~
-if [ ! -d ~/.dotfiles ]; then
-    if ! git clone https://github.com/jvhest/.dotfiles-arch.git ~/.dotfiles; then
-        echo "Failed to clone .dotfiles the repository"
-        return 1
-    fi
-else
-    echo "Repository already exists, skipping clone"
-fi
 mv .bash_profile .bash_profile.bak
 mv .bashrc .bashrc.bak
 
+# -----------------------------------------------
 # setup config
+# -----------------------------------------------
+
 cd ~/.dotfiles || { echo "Failed to change directory to .dotfiles"; return 1; }
 stow -S home
 
@@ -141,19 +132,24 @@ install_extra_packages() {
     sudo pacman -S --needed --noconfirm \
         picom \
         dunst \
+        libnotify \
         sxhkd \
         redshift \
         xorg-xrandr \
         xdotool \
         xclip \
+        udisks2 \
         feh \
         flameshot \
         lxappearance \
-        rofi
+        rofi \
+        alacritty \
+        ranger \
+        neovim \
+        brave
 }
 
 install_fonts
-install_picom
 install_extra_packages
 
 echo "All dependencies installed successfully."

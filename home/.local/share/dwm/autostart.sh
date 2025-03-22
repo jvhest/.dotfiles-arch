@@ -8,7 +8,7 @@ slstatus &
 xrdb -load ~/.config/Xresources
 
 # setup monitors the way I like them.
-virt=$(xrandr | grep ^Virtual | wc -l)
+virt=$(xrandr | grep ^Virtual | wc -l)	# running in VM
 if [ $virt -eq 1 ]; then
 	xrandr --output Virtual-1 --mode 1920x1080 &
 else

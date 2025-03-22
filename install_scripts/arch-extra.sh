@@ -16,8 +16,9 @@ git
 ntp
 wget
 intel-ucode
-# extra packages
 terminus-font
+vim
+# extra packages
 gptfdisk
 tar
 unrar
@@ -58,25 +59,23 @@ redshift
 xorg-xrandr
 xdotool
 xrdb
+udisks2     # mount external usb
 xclip
 feh
 flameshot
 lxappearance
 rofi
-
+alacritty
+ranger
+nvim
+brave
 
 
 # to install after dwm
-brave
-alacritty
 starship
 kitty
-neovim
-ranger
 sxiv
 cmus
-udisks2     # mount external usb
-gptfdisk
 fastfetch
 numlockx
 whois
@@ -90,6 +89,5 @@ ripgrep
 man
 transmission-qt
 keepassxc
-
 
 
