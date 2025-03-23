@@ -593,6 +593,7 @@ echo -ne "
                     Extra packages
 -------------------------------------------------------------------------
 "
+
 # admin tools
 pacman -S --noconfirm --needed gptfdisk
 # archiving and compression
