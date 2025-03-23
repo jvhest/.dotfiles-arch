@@ -3,10 +3,10 @@
 #####################
 
 super + b
-  brave
+  brave --password-store=basic
 
 super + shift + b
-  brave-browser --incognito
+  brave --incognito
 
 # rofi launchers
 super + space

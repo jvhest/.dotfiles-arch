@@ -6,10 +6,10 @@ static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = { "monospace:size=10" };
-/*static const char *fonts[]          = { "Meslo Nerd Font:size=14", "JetBrainsMono Nerd Font:size=14" };*/
-/*static const char dmenufont[]       = "Meslo Nerd Font:size=14";*/
+/*static const char *fonts[]          = { "monospace:size=10" };*/
+/*static const char dmenufont[]       = { "monospace:size=10" };*/
+static const char *fonts[]          = { "Meslo Nerd Font:size=14", "JetBrainsMono Nerd Font:size=14" };
+static const char dmenufont[]       = "Meslo Nerd Font:size=14";
 static const char col_gray1[]       = "#00141d";
 static const char col_gray2[]       = "#80bfff";
 static const char col_gray3[]       = "#FFFFFF";
@@ -63,7 +63,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *browsercmd[]  = { "brave", NULL };
+static const char *browsercmd[]  = { "brave", "--password-store=basic" NULL };
 
 #include "movestack.c"
 static const Key keys[] = {
