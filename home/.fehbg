@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/jvh/.local/share/backgrounds/abstract-0008.jpg' 

@@ -1,0 +1,82 @@
+    7zip
+alacritty
+    arch-install-scripts
+    base
+    base-devel
+bash-completion
+    bat
+    bluez
+    bluez-utils
+brave-bin
+breeze
+breeze-gtk
+cmus
+    curl
+    dhclient
+- dnsmasq
+dunst
+    efibootmgr
+    fastfetch
+feh
+flameshot
+    git
+    gptfdisk
+    grub
+imlib2
+    intel-ucode
+- iptables-nft
+keepassxc
+- libconfig
+- libev
+libnotify
+libxft
+libxinerama
+lightdm-gtk-greeter
+- linutil
+    linux-firmware
+    linux-lts
+lxappearance
+    mate-polkit
+- meson
+micro
+neovim
+    networkmanager
+    ntp
+    openssh
+    pacman-contrib
+    pipewire
+    pipewire-docs
+    pipewire-pulse
+    qemu-base
+qt5ct
+qt6ct
+ranger
+redshift
+    reflector
+rofi
+    rsync
+stow
+sxhkd
+sxiv
+    tar
+    terminus-font
+transmission-qt
+    tree
+    udisks2
+    unrar
+    unzip
+-uthash
+    virt-manager
+    wget
+    wireplumber
+    wireplumber-docs
+xclip
+xdg-user-dirs
+xdotool
+xorg-server
+xorg-xinit
+xorg-xrandr
+    xz
+yay-bin
+yay-bin-debug
+    zip

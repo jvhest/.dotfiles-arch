@@ -1,0 +1,5 @@
+#!/bin/sh
+
+mv -f config.h config.h.bak
+make
+sudo make clean install

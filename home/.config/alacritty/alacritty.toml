@@ -1,0 +1,60 @@
+# .toml only works for alacritty version >= 1.3
+# for version < 1.3 use .yml
+
+[general]
+live_config_reload = true
+
+import = [
+    "~/.config/alacritty/catppuccin_mocha.toml",
+    "~/.config/alacritty/keybinds.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+dynamic_padding = false
+opacity = 1.00
+title = "Alacritty"
+
+[window.padding]
+x = 0
+y = 1
+
+[window.class]
+instance = "Alacritty"
+general = "Alacritty"
+
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[selection]
+save_to_clipboard = false
+
+[terminal.shell]
+program = "/bin/bash"
+
+[colors]
+draw_bold_text_with_bright_colors = true
+

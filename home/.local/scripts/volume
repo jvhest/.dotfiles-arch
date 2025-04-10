@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# {"alt":"mute", "tooltip":"muted", "class":"muted"}   audio is muted
+# {"percentage":20, "tooltip":"20.496100000000002%"}   audio active
+
+status="$(pw-volume status)"
+if [[ "$status" =~ "mute" ]]; then
+  echo "0%"
+else
+  vol="$(echo "$status" | sed s/,.*// | sed s/.*://)"
+  # vol="$(pw-volume status | sed s/,.*// | sed s/.*://)"
+  echo "${vol}%"
+fi
+
+# vol="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
+# echo "${vol}% volume "

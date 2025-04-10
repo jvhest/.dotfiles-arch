@@ -1,0 +1,8 @@
+a ~/Music
+clear
+help
+d
+colorscheme gruvbox-dark
+q
+:q
+bind common <key> add

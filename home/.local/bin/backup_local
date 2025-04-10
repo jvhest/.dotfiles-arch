@@ -1,0 +1,46 @@
+#!/bin/bash
+
+declare usb_backup_path=""
+declare directories=("/etc/" "/home/jvh/")
+
+if [[ -d "/run/media/jvh/MyPassport/" ]] ; then
+    usb_backup_path="/run/media/jvh/MyPassport/Backups/arch-dwm/"
+fi
+
+if [[ -d "/run/media/jvh/XBT_Drive/" ]] ; then
+    usb_backup_path="/run/media/jvh/XBT_Drive/XBT_Backups/arch-dwm/"
+fi
+
+if [[ -z ${usb_backup_path} ]] ; then
+    echo "No valid backup-drive found"
+    exit 1
+fi
+
+echo "Using ${usb_backup_path} for backup"
+
+# umount /mnt/Torrents/
+# umount /mnt/Videos/
+
+declare backup_dir
+
+for directory in ${directories[@]} ; do
+
+  echo ""
+  echo "backup: ${directory}"
+  echo ""
+
+  backup_dir=${usb_backup_path}${directory}
+
+  if ! [[ -d ${backup_dir} ]] ; then
+    mkdir -p "${backup_dir}"
+    echo "create backup-directory ${backup_dir}"
+  fi
+
+  rsync -rah --info=progress2 --stats --delete --delete-excluded \
+        "${directory}" "${backup_dir}"
+
+  echo ""
+  echo "----"
+  echo ""
+
+done

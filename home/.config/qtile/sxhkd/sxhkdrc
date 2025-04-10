@@ -1,0 +1,76 @@
+#####################
+# Application keybindings #
+#####################
+
+# help with shortcuts
+super + h
+  kitty -e ~/.config/qtile/sxhkd/keyhelper.sh
+
+# make sxhkd reload its configuration files:
+super + Escape
+  pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
+
+super + shift + q
+  xdotool mousemove --screen 0 1850 1030; xdotool click 1; ~/.local/scripts/powermenu.sh
+
+super + b
+  brave --password-store=basic
+
+super + shift + b
+  brave --incognito
+
+super + shift + Return
+  xdotool mousemove --screen 0 1850 1030; xdotool click 1; rofi -show run
+
+# application launchers
+super + f
+  thunar
+
+super + e
+  nvim
+
+# Change volume, chunky
+# pw-volume status
+super + Insert
+  pw-volume change +3%
+
+super + Delete
+  pw-volume change -3%
+  # pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+super + End
+  pw-volume change -200%
+
+# dedicated volume keys
+{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+  pamixer {-i,-d} 2
+
+# dedicated backlight keys
+{XF86MonBrightnessUp,XF86MonBrightnessDown}
+  xbacklight {+10,-10}
+
+#########
+# Maim #
+#########
+super + @Print
+  maim -s ~/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png; \
+  notify-send 'Maim' 'Selected image saved to ~/Screenshots'
+
+@Print
+  maim ~/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png; \
+  notify-send 'Maim' 'Image saved to ~/Screenshots'
+
+super +shift + @Print
+  maim -i "$(xdotool getactivewindow)" ~/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png; \
+  notify-send 'Maim' 'Active window image saved to ~/Screenshots'
+
+## redshift
+super + alt + r
+  ~/scripts/redshift-on
+
+super + alt + b
+  ~/scripts/redshift-off
+
+
+
+

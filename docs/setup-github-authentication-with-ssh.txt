@@ -1,0 +1,45 @@
+see: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh
+
+authentication via ssh-key
+-------------------------
+
+1.  CREATE KEY-PAIR ON WORKSTATION
+
+a.  needed openssh installed: > sudo pacman -S openssh
+
+b.  in terminal: > ssh-keygen -t ed25519-sk -C "jan.vanhest@gmail.com"
+    creates 2 key-files in ~/.ssh and asks for passphrase.
+    (when using ssh-key to authenticate the passphrase will be asked.)
+    private key: id_ed25519
+    public key:  id_ed25519.pub
+
+2.  ADD PRIVATE KEY TO SSH-AGENT
+
+a.  check if ssh-agent is running: > $ eval "$(ssh-agent -s)"
+
+b.  add key to ssh-agent: > ssh-add ~/.ssh/id_ed25519
+
+3.  ADD PUBLIC KEY TO YOUR GITHUB ACCOUNT
+
+1.  open public key file in editor and copy the content.
+
+2.  go to the settings page of your github account
+    in the sidebar click: SSH and GPG keys
+    after that click Add SSH key.
+    title -> name of workstation
+    type -> authentication
+    key -> paste clipboard
+    and Add SSH key
+
+3.  test new key by ssh into github.com: > ssh -T git@github.com
+    respons:
+    > The authenticity of host 'github.com (IP ADDRESS)' can't be established.
+    > ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+    > Are you sure you want to continue connecting (yes/no)?
+    answer yes -> host github is added to known_hosts file of workstation
+
+4.  PUSH GIT REPO TO REMOTE (GITHUB) USING SSH
+    > git remote set-url origin git@github.com:<username>/<repository>.git
+    where <username> is your GitHub username and <repository> is the name of your repository.
+    > git push -u origin main
+

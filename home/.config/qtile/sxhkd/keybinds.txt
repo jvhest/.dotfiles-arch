@@ -1,0 +1,81 @@
+WM KEY BINDINGS
+----------------
+Super + Return          --- Launch Kitty
+Super + Q               --- Close current window
+
+Super + H               --- Change Focus Left
+Super + L               --- Change Focus Right
+Super + J               --- Change Focus Down
+Super + K               --- Change Focus Up
+Super + Space           --- Change Focus to next window
+
+Super + .               --- Focus to next monitor
+Super + ,               --- Focus to prev monitor
+
+Super + Shift + H       --- Move window Left
+Super + Shift + L       --- Move window Right
+Super + Shift + J       --- Move window Down
+Super + Shift + K       --- Move window Up
+
+Super + Ctrl + Left     --- Resize Left
+Super + Ctrl + Right    --- Resize Right
+
+Super + N               --- Reset all window sizes
+Super + M               --- Toggle between min and max sizes
+Super + T               --- toggle floating
+Super + F               --- toggle fullscreen
+Super + Shift + M       --- Toggle hide/show all windows current group
+Super + Shift + Space   --- Toggle between split and unsplit sides of stack
+
+Super + Ctrl + b        --- Toggle Top-bar
+Super + Shift + N       --- Toggle WindowFollow
+Super + Shift + R       --- Reload the config
+Super + R               --- Spawn a command using a prompt widget
+
+WM TAG BINDINGS
+----------------
+Super + (1-9)           --- Switch to tag (workspace 1-9)
+Super + Shift + (1-9)   --- Move Window to tag (workspace 1-9)
+Super + 0               --- Switch to tag 10
+Super + Shift + 0       --- Move to tag 10
+Super + Tab             --- Last Tag
+Ctrl  + Shift + H       --- View Tag to Left
+Ctrl  + Shift + L       --- View Tag to Right
+Ctrl  + Alt + H         --- Move Window to Left Tag
+Ctrl  + Alt + L         --- Move Window to Right Tag
+
+WM LAYOUTS
+-----------
+Super + Tab             --- Toggle between layouts
+
+Ctrl + Shift + 1        --- MonadTall
+Ctrl + Shift + 2        --- MonadWide
+Ctrl + Shift + 3        --- Tile
+Ctrl + Shift + 4        --- Max
+
+SXHKD KEY BINDINGS
+------------------
+Super + Shift + Q       --- Logout/Reboot/Poweroff WM
+Super + Shift + Return  --- Rofi run
+Super + P               --- Launch dmenu
+Super + B               --- Brave
+Super + Shift + B       --- Brave -incognito
+Super + F               --- Thunar
+Super + E               --- Nvim (curr dir)
+Super + Escape          --- Reload sxhkd
+
+AUDIO
+-----
+Super + Insert --- Volume Up
+Super + Delete --- Volume Down
+Super + End --- Muted
+
+SCROT
+-----
+Super + @Print --- Select Rectangle Screenshot
+@Print --- Fullscreen Screenshot
+
+REDSHIFT
+--------
+Super + Alt + r --- Redshift On (night)
+Super + Alt + b --- Redshift off (daytime)
