@@ -16,16 +16,18 @@ mkdir -p ~/.local/share/fonts
 
 # Array of font names
 fonts=( 
-    "CascadiaCode"
-    "FiraCode"  
-    "Hack"  
-    "Inconsolata"
-    "JetBrainsMono" 
-    "Meslo"
-    "Mononoki" 
-    "RobotoMono" 
-    "SourceCodePro" 
-    "UbuntuMono"
+    # "CascadiaCode"
+    # "FiraCode"  
+    # "Hack"  
+    # "Inconsolata"
+    # "JetBrainsMono" 
+    # "Meslo"
+    # "Mononoki" 
+    # "RobotoMono" 
+    # "SourceCodePro" 
+    # "UbuntuMono"
+    # "SpaceMono"
+    "Noto"
     # Add additional fonts here if needed
 )
 

@@ -3,8 +3,8 @@
 #######################################################
 
 # settings for common commands
-alias v="$EDITOR"
-alias vx="NVIM_APPNAME=nvim-xl nvim"
+alias vi="NVIM_APPNAME=nvim_sm nvim"
+alias vim="NVIM_APPNAME=nvim_xl nvim"
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias cp="cp -iv"
 alias mv="mv -iv"

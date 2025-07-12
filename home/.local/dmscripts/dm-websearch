@@ -43,8 +43,11 @@ are -a -> declare -ag" >>"$DM_CONFIG_DIFF_LOGFILE"
 
     # Searching the chosen engine.
     query=$(printf '%s' "$engine" | ${MENU} 'Enter search query:')
+    echo "--------> ${query}" > ~/dm.log
 
     query="$(echo -n "${query}" | jq -s -R -r @uri)"
+    echo "========> ${query}" >> ~/dm.log
+
     # Display search results in web browser
     # shellcheck disable=SC2154
     ${DMBROWSER} "${url}${query}"

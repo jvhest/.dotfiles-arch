@@ -1,23 +1,23 @@
 * {
-    bg-col:  #303446;
-    bg-col-light: #303446;
-    border-col: #303446;
-    selected-col: #303446;
-    blue: #8caaee;
-    fg-col: #c6d0f5;
-    fg-col2: #e78284;
-    grey: #737994;
+    bg-col:         rgba ( 48, 52, 70, 100 % );
+    bg-col-light:   rgba ( 48, 52, 70, 100 % );
+    border-col:     rgba ( 48, 52, 70, 100 % );
+    selected-col:   rgba ( 115, 119, 147, 100 %);
+    blue:           rgba ( 140, 170, 238, 100 %);
+    fg-col:         rgba ( 198, 208, 245, 100 %);
+    fg-col2:        rgba ( 232, 130, 131, 100 %);
+    grey:           rgba ( 115, 119, 147, 100 %);
 
     width: 600;
-    font: "JetBrainsMono Nerd Font 14";
+    font: "JetBrainsMono Nerd Font 12";
 }
+
 element-text, element-icon , mode-switcher {
     background-color: inherit;
     text-color:       inherit;
 }
 
 window {
-    transparency: "real";
     background-color: @bg-col;
     border: 0;
     border-radius: 10px;
@@ -29,7 +29,7 @@ window {
 
 mainbox {
     background-color: @bg-col;
-    width: 200px;
+    width: 150px;
 }
 
 inputbar {
@@ -70,7 +70,7 @@ listview {
 element {
     padding: 5px;
     background-color: @bg-col;
-    text-color: @fg-col  ;
+    text-color: @fg-col;
 }
 
 element-icon {
@@ -78,8 +78,8 @@ element-icon {
 }
 
 element selected {
-    background-color:  @selected-col ;
-    text-color: @fg-col2  ;
+    background-color: @selected-col;
+    text-color: @fg-col;
 }
 
 mode-switcher {

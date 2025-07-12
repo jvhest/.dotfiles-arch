@@ -25,6 +25,8 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+# . "$HOME/.cargo/env"
+
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # start dwm
@@ -34,4 +36,7 @@ if [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && [ -f "$HOME/
   startx
   logout
 # fi
+
+
+. "$HOME/.local/share/../bin/env"
 

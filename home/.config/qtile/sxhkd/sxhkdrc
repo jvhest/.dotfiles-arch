@@ -3,6 +3,10 @@
 #####################
 
 # help with shortcuts
+super + w
+  kitty --hold -e curl wttr.in/Turnhout
+
+# help with shortcuts
 super + h
   kitty -e ~/.config/qtile/sxhkd/keyhelper.sh
 
@@ -27,7 +31,7 @@ super + f
   thunar
 
 super + e
-  nvim
+  emacs
 
 # Change volume, chunky
 # pw-volume status
@@ -63,13 +67,6 @@ super + @Print
 super +shift + @Print
   maim -i "$(xdotool getactivewindow)" ~/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png; \
   notify-send 'Maim' 'Active window image saved to ~/Screenshots'
-
-## redshift
-super + alt + r
-  ~/scripts/redshift-on
-
-super + alt + b
-  ~/scripts/redshift-off
 
 
 

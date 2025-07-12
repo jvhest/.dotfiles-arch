@@ -28,13 +28,17 @@ main() {
     # As this is loaded from other file it is technically not defined
     # shellcheck disable=SC2154
     _location="$(printf '%s\n' "${weather_locations}" | ${MENU} "Where do you want to see the weather?")"
-    echo "$_location"
+    echo ">>>${_location}<<<" >> ~/dm.log
 
     # If $weather_opts is unset, give it an empty value
     weather_opts+=''
 
     # Curl wttr.in, a CLI weather app.
-    curl -s "https://wttr.in/${_location// /%20}?T&${weather_opts}" | yad --text-info --maximized
+    # curl -s "https://wttr.in/${_location// /%20}?T&${weather_opts}" | yad --text-info --maximized
+    curl -s "https://wttr.in/${_location// /%20}"
+    # kitty --hold bat /tmp/wttr
+    # yad --text-info --maximized < /tmp/wttr
+    # curl -s "https://wttr.in/${_location}" | yad --text-info --maximized
 }
 
 MENU="$(get_menu_program "$@")"

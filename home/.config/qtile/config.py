@@ -36,6 +36,7 @@ myTerm = "kitty"            # My terminal of choice
 # myTerm = "alacritty"      # My terminal of choice
 myBrowser = "brave"         # My browser of choice
 myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
+# myEmacs = "emacs " # The space at the end is IMPORTANT!
 
 # Allows you to input a name when adding treetab section.
 @lazy.layout.function
@@ -151,7 +152,8 @@ keys = [
 
     # Emacs programs launched using the key chord SUPER+e followed by 'key'
     KeyChord([mod],"e", [
-        Key([], "e", lazy.spawn(myEmacs), desc='Emacs Dashboard'),
+        Key([], "e", lazy.spawn(myEmacs), desc='Emacs Client'),
+        Key([], "z", lazy.spawn("emacs "), desc='Emacs'),
         Key([], "a", lazy.spawn(myEmacs + "--eval '(emms-play-directory-tree \"~/Music/\")'"), desc='Emacs EMMS'),
         Key([], "b", lazy.spawn(myEmacs + "--eval '(ibuffer)'"), desc='Emacs Ibuffer'),
         Key([], "d", lazy.spawn(myEmacs + "--eval '(dired nil)'"), desc='Emacs Dired'),
@@ -402,12 +404,12 @@ def init_widgets_list():
                 fmt = '    {}',
                 visible_on_warn = False,
         ),
-        widget.Volume(
-                foreground = colors[7],
-                padding = 6,
-                get_volume_command = "~/.local/scripts/volume",
-                fmt = '   {}',
-        ),
+        # widget.Volume(
+        #         foreground = colors[7],
+        #         padding = 6,
+        #         get_volume_command = "~/.local/scripts/volume",
+        #         fmt = '   {}',
+        # ),
         # widget.KeyboardLayout(
         #         foreground = colors[4],
         #         padding = 6,
@@ -442,8 +444,8 @@ def init_widgets_screen2():
 def init_screens():
     # return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), margin=[8, 12, 0, 12], size=28)),
     #         Screen(top=bar.Bar(widgets=init_widgets_screen2(), margin=[8, 12, 0, 12], size=28))]
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), margin=[4, 12, 0, 12], size=35)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), margin=[4, 12, 0, 12], size=35))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), margin=[0, 12, 0, 12], size=35)),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), margin=[0, 12, 0, 12], size=35))]
 
 if __name__ in ["config", "__main__"]:
     screens = init_screens()
