@@ -1,0 +1,3 @@
+[submodule "home/.config/doom"]
+	path = home/.config/doom
+	url = https://github.com/jvhest/doom.git
