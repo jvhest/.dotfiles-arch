@@ -31,7 +31,7 @@ if hash sxhkd >/dev/null 2>&1; then
 fi
 
 # start emacs server
-/usr/bin/emacs --daemon &
+# /usr/bin/emacs --daemon &
 
 # start network manager applet
 nm-applet &

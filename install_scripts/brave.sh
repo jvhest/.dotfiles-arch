@@ -1,2 +1,2 @@
-# instal Brave browser
-curl -fsS https://dl.brave.com/install.sh | sh
+# instal Brave browser in Arch Linux
+yay -S brave-bin

@@ -35,8 +35,8 @@ mod = "mod4"                # Sets mod key to SUPER/WINDOWS
 myTerm = "kitty"            # My terminal of choice
 # myTerm = "alacritty"      # My terminal of choice
 myBrowser = "brave"         # My browser of choice
-myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
-# myEmacs = "emacs " # The space at the end is IMPORTANT!
+# myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
+myEmacs = "emacs " # The space at the end is IMPORTANT!
 
 # Allows you to input a name when adding treetab section.
 @lazy.layout.function
