@@ -1,3 +1,6 @@
 [submodule "home/.config/doom"]
 	path = home/.config/doom
 	url = https://github.com/jvhest/doom.git
+[submodule "home/.config/emacs"]
+	path = home/.config/emacs
+	url = https://github.com/jvhest/emacs.git
