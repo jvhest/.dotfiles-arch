@@ -1,0 +1,50 @@
+Y          - Yank to end of line
+<leader>p  - Paste Replace without Copy
+<leader>d  - Delete without yanking
+<leader>pa - Copy Full File-Path
+
+-- Buffer navigation
+<leader>B  - Buffer list
+<Tab>      - Next buffer
+<S-Tab>    - Previous buffer
+<leader>bc - Close current buffer
+<leader>ba - Close all buffers
+
+-- Window navigation
+<C-h>      - Move to left window
+<C-j>      - Move to bottom window
+<C-k>      - Move to top window
+<C-l>      - Move to right window
+
+-- Scrolling and Center
+<C-d>      - Half page down (centered)
+<C-u>      - Half page up (centered)
+
+-- Splitting & Closing
+<leader>wv - Split window vertically
+<leader>wh - Split window horizontally
+<leader>wc - Close current window
+
+-- Window resizing
+<C-Up>     - Increase window height
+<C-Down>   - Decrease window height
+<C-Left>   - Decrease window width
+<C-Right>  - Increase window width
+
+-- Move lines up/down
+<A-j>      - Move line down
+<A-k>      - Move line up
+<A-j>      - Move selection down
+<A-k>      - Move selection up
+
+-- Quick file navigation
+<leader>e  - Open file explorer
+<leader>ff - Find file
+
+-- Quick config editing
+<leader>ce - Edit config
+<leader>cr - Source config
+
+-- User Command
+:SudoWrite  - Write file as sudo
+

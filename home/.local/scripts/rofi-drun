@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# script name: dm-usbmount
+# Description: Mount/unmount usb drives using dmenu. No fancy daemon required.
+# Dependencies: dmenu
+
+# Set with the flags "-e", "-u","-o pipefail" cause the script to fail
+# if certain things happen, which is a good thing.  Otherwise, we can
+# get hidden bugs that are hard to discover.
+set -euo pipefail
+
+declare dmscript_path="/home/jvh/.local/dmscripts"
+
+# Rofi CMD
+run_rofi() {
+  rofi -show drun \
+    -p "Choose application: " \
+    -theme "tokyonight.rasi"
+}
+
+main() {
+  # position mouse on screen 1
+  xdotool mousemove --screen 0 1850 1030
+  xdotool click 1
+
+  run_rofi
+}
+
+[[ "${BASH_SOURCE[0]}" == "${0}" ]] && main "$@"
+
+# vim: ts=2 sts=2 sw=2 et

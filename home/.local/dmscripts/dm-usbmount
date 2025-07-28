@@ -11,8 +11,10 @@
 # get hidden bugs that are hard to discover.
 set -euo pipefail
 
+declare dmscript_path="/home/jvh/.local/dmscripts"
+
 # shellcheck disable=SC1091
-source ./_dm-helper.sh 2>/dev/null || source _dm-helper.sh 2>/dev/null
+source ${dmscript_path}/_dm-helper.sh 2>/dev/null || source _dm-helper.sh 2>/dev/null
 
 source_dmscripts_configs
 

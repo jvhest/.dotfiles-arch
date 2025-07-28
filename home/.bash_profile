@@ -13,7 +13,7 @@ echo "~/.bash_profile" >> ~/test.log
 [ -d "$HOME/.local/scripts" ] && PATH="$HOME/.local/scripts:$PATH"
 
 # set path so it includes user's private scripts if it exists
-[ -d "$HOME/.local/dmscripts" ] && PATH="$HOME/.local/dmscripts:$PATH"
+# [ -d "$HOME/.local/dmscripts" ] && PATH="$HOME/.local/dmscripts:$PATH"
 
 export PATH
 
@@ -28,6 +28,13 @@ fi
 # . "$HOME/.cargo/env"
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
+
+# setup guix profiles
+# GUIX_PROFILE="/home/jvh/.guix-profile"
+# . "$GUIX_PROFILE/etc/profile"
+#
+# GUIX_PROFILE="$HOME/.config/guix/current"
+# . "$GUIX_PROFILE/etc/profile"
 
 # start dwm
 if [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && [ -f "$HOME/.xinitrc" ] && grep -q "^exec dwm" "$HOME/.xinitrc"; then

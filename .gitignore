@@ -1,3 +1,5 @@
 __pycache__/
-undodir/
-../__pycache__/
+**/__pycache__/
+**/undodir/
+
+home/.config/nvim_sm/undodir/

@@ -15,8 +15,10 @@
 # get hidden bugs that are hard to discover.
 set -euo pipefail
 
+declare dmscript_path="/home/jvh/.local/dmscripts"
+
 # shellcheck disable=SC1091
-source ./_dm-helper.sh 2>/dev/null || source _dm-helper.sh 2>/dev/null
+source ${dmscript_path}/_dm-helper.sh 2>/dev/null || source _dm-helper.sh 2>/dev/null
 
 source_dmscripts_configs
 
@@ -28,8 +30,11 @@ fi
 # Set wallpaper using either xwallpaper or swaybf
 setbg() {
     case "$XDG_SESSION_TYPE" in
-    'x11') xwallpaper --stretch "$1" ;;
-    'wayland') swaybg -m "stretch" -i "$1" ;;
+    # 'x11') xwallpaper --stretch "$1" ;;
+    'x11') feh --no-fehbg --bg-fill  "$1"
+           echo "$1" >"$HOME"/.cache/wall ;;
+    'wayland') swaybg -m "stretch" -i "$1"
+           echo "$1" >"$HOME"/.cache/wall ;;
     *) err "Unknown display server" ;;
     esac
 }
@@ -39,32 +44,17 @@ main() {
     case "$choice" in
     "Set")
         # shellcheck disable=SC2154
-        if [ "$use_imv" = 0 ]; then
-            # shellcheck disable=SC2154
-            wallpaper="$(sxiv -t -o "${setbg_dir}")"
-            echo "$wallpaper" >"$HOME"/.cache/wall
-            setbg "$wallpaper"
-        else
-            # Read each line printed to stdin, imv behaves weird
-            # We also ignore a shellcheck issue because it's a bug
-            # shellcheck disable=SC2154
-            imv "${setbg_dir}" | while read -r LINE; do
-                pidof "swaybg" && killall "swaybg"
-                pidof "xwallpaper" && killall "xwallpaper"
-                setbg "$LINE" & # Sets the wallpaper and frees it from the process
-                notify-send "Wallpaper has been updated" "$LINE is the current wallpaper, edit your window manager config if you would like this to persist on reboot"
-            done
-        fi
+        wallpaper="$(sxiv -t -o "${setbg_dir}")"
+        [ -n "$wallpaper" ] && setbg "$wallpaper"
         ;;
     "Random")
         valid_paper="No"
         until [ "$valid_paper" = "Yes" ]; do
-            pidof "swaybg" && killall "swaybg"
-            pidof "xwallpaper" && killall "xwallpaper"
-            wallpaper="$(find "${setbg_dir}" -type f | shuf -n 1)"
-            setbg "$wallpaper" &
-            echo "$wallpaper" >"$HOME/.cache/wall"
-            valid_paper="$(printf "Yes\nNo" | ${MENU} "Do you like the new wallpaper?")"
+            # pidof "swaybg" && killall "swaybg"
+            # pidof "feh" && killall "feh"
+            wallpaper="$(find "${setbg_dir}/" -type f | shuf -n 1)"
+            [ -n "$wallpaper" ] && setbg "$wallpaper"
+            valid_paper="$(printf "Next\nYes" | ${MENU} "Do you like the new wallpaper?")"
         done
         ;;
     "Exit") echo "Program terminated" && exit 1 ;;

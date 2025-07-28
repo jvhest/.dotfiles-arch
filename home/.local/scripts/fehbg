@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+declare curr_wallpaper="$HOME/.cache/wall"
+
+xargs feh --no-fehbg --bg-fill  < ${curr_wallpaper}

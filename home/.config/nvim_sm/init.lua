@@ -177,10 +177,14 @@ vim.keymap.set("n", "<leader>ff", ":find ", { desc = "Find file" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position" })
 
 -- Quick config editing
-vim.keymap.set("n", "<leader>ce", ":e ~/.config/nvim_lite/init.lua<CR>",
+vim.keymap.set("n", "<leader>ce", ":e ~/.config/nvim_sm/init.lua<CR>",
     { desc = "Edit config" })
-vim.keymap.set("n", "<leader>cr", ":source ~/.config/nvim_lite/init.lua<CR>",
+vim.keymap.set("n", "<leader>cr", ":source ~/.config/nvim_sm/init.lua<CR>",
     { desc = "Source config" })
+
+-- Help keybindings
+vim.keymap.set("n", "<leader>?", ":vsplit ~/.config/nvim_sm/keybindings.txt<CR>",
+    { desc = "Help keybindings" })
 
 -- Copy Full File-Path
 vim.keymap.set("n", "<leader>pa", function()

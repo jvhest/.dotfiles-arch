@@ -1,6 +1,6 @@
-#####################
+###########################
 # Application keybindings #
-#####################
+###########################
 
 # help with shortcuts
 super + w
@@ -26,12 +26,12 @@ super + shift + b
 super + shift + Return
   xdotool mousemove --screen 0 1850 1030; xdotool click 1; rofi -show run
 
+super + p
+  xdotool mousemove --screen 0 1850 1030; xdotool click 1; rofi -show run
+
 # application launchers
 super + f
   thunar
-
-super + e
-  emacs
 
 # Change volume, chunky
 # pw-volume status

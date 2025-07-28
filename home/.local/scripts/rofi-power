@@ -18,8 +18,7 @@ rofi_cmd() {
 	rofi -dmenu \
 		-p "" \
 		-mesg "Uptime: $uptime" \
-		-theme "powermenu.rasi"
-		# -theme "$HOME/.config/rofi/powermenu.rasi"
+		-theme "powermenu.rasi"  # in ~/.local/share/rofi
 }
 
 # Pass variables to rofi dmenu
@@ -62,6 +61,10 @@ run_cmd() {
 			;;
 	esac
 }
+
+# position mouse on screen 1
+xdotool mousemove --screen 0 1850 1030
+xdotool click 1
 
 # Actions
 chosen="$(run_rofi)"

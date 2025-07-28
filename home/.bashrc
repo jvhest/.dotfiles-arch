@@ -101,3 +101,4 @@ eval "$(uv generate-shell-completion bash)"
 
 [ -f "/home/jvh/.ghcup/env" ] && . "/home/jvh/.ghcup/env" # ghcup-env
 . "$HOME/.local/share/../bin/env"
+

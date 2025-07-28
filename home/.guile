@@ -1,0 +1,7 @@
+
+(use-modules (ice-9 readline))
+
+(set-readline-prompt! "guile>")
+
+(activate-readline)
+

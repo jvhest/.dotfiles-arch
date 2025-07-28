@@ -15,12 +15,12 @@ sleep 1
 # setup redshift
 redshift -l 51.32:4.94 -t 6500:5000 -g 0.8 -m randr &
 
+# lxsession &
+
+picom -b      # --daemon &
+
 # polkit
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
-
-lxsession &
-
-picom --daemon &
 
 # sxhkd
 # (re)load sxhkd for keybinds
@@ -42,11 +42,13 @@ volumeicon &
 # conky -c "$HOME"/.config/conky/qtile/01/"$COLORSCHEME".conf || echo "Couldn't start conky."
 
 # background
+fehbg
 ### UNCOMMENT ONLY ONE OF THE FOLLOWING THREE OPTIONS! ###
 # 1. Uncomment to restore last saved wallpaper
-# feh --bg-fill ~/.local/share/backgrounds/abstract-0008.jpg &
+# feh --bg-fill ~/.local/share/wallpapers/nature-0034.jpg &
 # xargs xwallpaper --stretch < ~/.cache/wall &
-xargs xwallpaper --stretch < ~/.cache/wall
+# xargs xwallpaper --stretch < ~/.cache/wall
+xwallpaper --stretch ~/.local/share/wallpapers/nature-0050.jpg
 # 2. Uncomment to set a random wallpaper on login
 # find /usr/share/backgrounds/dtos-backgrounds/ -type f | shuf -n 1 | xargs xwallpaper --stretch &
 # 3. Uncomment to set wallpaper with nitrogen
